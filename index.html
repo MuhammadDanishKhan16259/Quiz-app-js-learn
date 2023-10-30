@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Quiz App SMIT</title>
+</head>
+<body>
+
+
+        <!-- login and sing up page -->
+        <!-- <div class="container">
+            <div class="signUp">
+              <div class="col-1"></div>
+              <div class="col-2">
+                <div class="heading">
+                  <h1 class="logAndSign">sign up</h1>
+              
+                </div> -->
+
+                    <!--sign up-->
+                <!-- <form action="" class="signForm">
+                  <input type="text" placeholder="Enter your name" class="name" />
+                  <input type="email" placeholder="Enter your gmail" class="email" />
+                  <input  
+                    type="password"
+                    placeholder="Enter your password"
+                    class="password"
+                  />
+                  <div class="error">
+                    <p class="error1">this is not correct</p>
+                  </div>
+                </form>
+                <div class="button">
+                  <button class="signUpButton" onclick="signUp()">Sign Up</button>
+                  <button class="LoginButton" onclick="login()">Login</button>
+                </div>
+              </div>
+            </div>
+          </div> -->
+
+
+    <!-- 1st Component -->
+    <div class="start-screen">
+        <button id="start-button" onclick="startQuiz()">Start Quiz</button>
+    </div>
+
+    <!-- 2nd Component -->
+    <div id="wrapper">
+        <div id="display-container">
+            <div class="header">
+                <div class="number-of-count">
+                    <span class="number-of-question"></span>
+                </div>
+                <div class="timer-div">
+                    <img src="timer.png" />
+                    <span class="time-left"></span>
+                </div>
+            </div>
+            <div id="container">
+                <!-- Question and options are displayed here -->
+            </div>
+            <div class="btn-container">
+                <button id="next-button">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3rd Component -->
+    <div class="score-container hide">
+        <div id="user-score"></div>
+        <button id="restart">Restart</button>
+    </div>
+</body>
+<script src="script.js"></script>
+<!-- <script type="module" >
+
+var sign1 = true;
+      var log1 = true;
+
+      var signUp = document.querySelector(".signUpButton");
+      var logIn = document.querySelector(".LoginButton");
+      // error div change scale in 1
+      let error12 = document.querySelector(".error");
+      // error content
+      let error1 = document.querySelector(".error1");
+      // sign up
+
+      function main1() {
+        logIn.addEventListener("click", () => {
+          if (log1 === true) {
+            let logAndSign = document.querySelector(".logAndSign");
+            let col = document.querySelector(".col-1");
+            let name = document.querySelector(".name");
+            let LoginButton = document.querySelector(".LoginButton");
+            let signUpButton = document.querySelector(".signUpButton");
+
+            name.style.display = "none";
+
+            LoginButton.style.backgroundColor = "#2f2e40";
+            LoginButton.style.boxShadow = "none";
+            LoginButton.style.borderColor = "#2f2d40";
+
+            signUpButton.style.backgroundColor = "transparent";
+            signUpButton.style.boxShadow = "inset 0 0 12px 0 #554ce2";
+            signUpButton.style.borderColor = "#4c44dc";
+
+            logAndSign.innerHTML = "Login";
+            col.style.backgroundImage = "url(./images/login1.png)";
+            // console.log("main bhi update ho rahan ho");
+
+            // console.log(log1 + " main app ka dost");
+            log1 = false;
+            sign1 = false;
+            asd();
+            asd1();
+            // console.log("mujhy update kia gaya hy");
+          }
+        });
+      }
+      main1();
+
+      function asd() {
+        if (log1 === false) {
+          // console.log("main run ho rahan ho login");
+          logIn.addEventListener("click", () => {
+            // console.log("mujh py click kia gaya hy");
+            let email = document.querySelector(".email").value;
+            let password = document.querySelector(".password").value;
+
+            signInWithEmailAndPassword(auth, email, password)
+              .then((userCredential) => {
+                // Signed in
+                const user = userCredential.user;
+                const dt = new Date();
+                update(ref(database, "User/" + user.uid), {
+                  logIn_User: dt,
+                });
+
+                let pageDisapper = document.querySelector(".container");
+                pageDisapper.style.transform = "scale(0)";
+                // ...
+                error12.style.transform = "scale(1)";
+                error1.innerHTML = "User loged In";
+                userNameSet(user.uid);
+              })
+              .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+
+                error12.style.transform = "scale(1)";
+                error1.innerHTML = errorCode;
+              });
+          });
+        }
+      }
+
+      function asd1() {
+        signUp.addEventListener("click", () => {
+          if (sign1 === false) {
+            let logAndSign = document.querySelector(".logAndSign");
+            let col = document.querySelector(".col-1");
+            let name = document.querySelector(".name");
+            let LoginButton = document.querySelector(".LoginButton");
+            let signUpButton = document.querySelector(".signUpButton");
+
+            name.style.display = "block";
+
+            LoginButton.style.backgroundColor = "transparent";
+            LoginButton.style.boxShadow = "inset 0 0 12px 0 #554ce2";
+            LoginButton.style.borderColor = "#4c44dc";
+
+            signUpButton.style.backgroundColor = "#2f2e40";
+            signUpButton.style.boxShadow = "none";
+            signUpButton.style.borderColor = "#2f2d40";
+
+            logAndSign.innerHTML = "Sign Up";
+            col.style.backgroundImage = "url(./images/signUp1.jpg)";
+
+            // console.log(log1 + " main app ka dost 1");
+            log1 = true;
+            sign1 = true;
+            main1();
+            main2();
+            // console.log("mujhy update kia gaya hy 1");
+          }
+        });
+      }
+
+      function main2() {
+        // console.log("main main2 hon");
+        signUp.addEventListener("click", () => {
+          if (sign1 === true) {
+            // console.log("condition check kia ga raha hy");
+
+            let email = document.querySelector(".email").value;
+            let name = document.querySelector(".name").value;
+            let password = document.querySelector(".password").value;
+
+            createUserWithEmailAndPassword(auth, email, password)
+              .then((userCredential) => {
+                // Signed in
+                const user = userCredential.user;
+
+                set(ref(database, "User/" + user.uid), {
+                  userName: name,
+                  userEmail: email,
+                  userPassword: password,
+                });
+
+                // ...
+                let pageDisapper = document.querySelector(".container");
+                pageDisapper.style.transform = "scale(0)";
+
+                error12.style.transform = "scale(1)";
+                error1.innerHTML = "Sign Up";
+                userNameSet(user.uid);
+              })
+              .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                // ..
+                error12.style.transform = "scale(1)";
+                error1.innerHTML = errorCode;
+              });
+          }
+        });
+      }
+      main2();
+</script> -->
+</html>
+
+<!-- //ecma js ka standard h -->

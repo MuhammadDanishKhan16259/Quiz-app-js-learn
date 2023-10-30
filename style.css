@@ -1,0 +1,325 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+body {
+	background-color: #D5FFE4;
+}
+
+/* Sign Up */
+/* ******* */
+.container {
+	width: 100%;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 123123;
+	background-color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+  .signUp {
+	width: 850px;
+	height: 500px;
+	border-radius: 15px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: 0 0 5px 0px #6c63fe;
+  }
+  .col-1 {
+	width: 50%;
+	height: 100%;
+	background-image: url(./images/signUp1.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+  }
+  .col-2 {
+	width: 50%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	background-color: #6c63fe;
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
+  }
+  .col-2 .heading {
+	width: 100%;
+	padding: 0.5em 0;
+	text-align: center;
+  }
+  .col-2 .heading h1 {
+	font-size: 2.3em;
+	color: #fff;
+	text-shadow: -2px 1px 6px #6c63fe;
+  }
+  .signForm {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+  }
+  .signForm input::placeholder {
+	color: #ccc;
+	font-size: 0.9em;
+  }
+  .signForm input {
+	background: transparent !important;
+	box-shadow: inset 0 0 12px 0 #554ce2;
+	border: 2px solid #554ce2 !important;
+	margin: 0.5em 0;
+	width: 80%;
+	height: 30px;
+	padding: 1em;
+	font-size: 1.3em;
+	outline: none;
+	border-radius: 10px;
+	color: #eee !important;
+  }
+  .signUpButton,
+  .LoginButton {
+	width: 130px;
+	font-size: 1.3em;
+	height: 45px;
+	border-radius: 10px;
+	color: #fff;
+	cursor: pointer;
+  }
+  .button button:hover {
+	background-color: #2f2e40;
+	box-shadow: none;
+	border-color: #2f2d40;
+  }
+  .LoginButton {
+	background: transparent;
+	border: 2px solid #4c44dc;
+	box-shadow: inset 0 0 12px 0 #554ce2;
+  }
+  .signUpButton {
+	background-color: #2f2e40;
+	border: 2px solid #2f2d40;
+	box-shadow: none;
+	/* border-color: #2f2d40; */
+  }
+  .signUpButton:hover {
+	background-color: transparent;
+	box-shadow: inset 0 0 12px 0 #554ce2;
+	border-color: #4c44dc;
+  }
+  
+  .row {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+  }
+  .row .col1 {
+	width: 100%;
+	height: 40%;
+	background-image: url("./images/img2.png"); /*./images/Sample\ 10.png*/
+	background-size: cover;
+	background-position: center center; /*bottom*/
+	background-repeat: no-repeat;
+	position: relative;
+  }
+  .col1 .heading {
+	position: absolute;
+	bottom: 1.5em;
+	left: 2em;
+	color: #fff;
+	font-size: 1.3em;
+  }
+  .col1 .hamburgerIcon {
+	position: absolute;
+	top: 1em;
+	left: 1em;
+	color: #fff;
+	font-size: 1.7em;
+	cursor: pointer;
+	transform: scale(1.5);
+  }
+  .col1 .hamburgerIcon:hover {
+	transform: scale(1);
+  }
+  
+  .row .col2 {
+	width: 100%;
+	height: 60%;
+	background-color: #fff; /*#161929*/
+	border-top-left-radius: 1.5em;
+	border-top-right-radius: 1.5em;
+	position: relative;
+	padding: 1em;
+  }
+  .row .col2 .tableContainer {
+	display: none;
+	height: 100%;
+	overflow: auto;
+  }
+  .col2 .addIcon {
+	position: absolute;
+	bottom: 1em;
+	right: 1em;
+	background-color: #5352ed;
+	border-radius: 50%;
+	height: 60px;
+	width: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	font-size: 1.5em;
+	cursor: pointer;
+	transform: translateX(200px);
+  }
+  .col2 .addIcon:hover {
+	transform: translateX(0px) rotate(360deg) !important;
+	box-shadow: 0 0 5px 0 #862f62;
+  }
+
+/* componenet styles */
+
+.start-screen,
+.score-container {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+button {
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+#start-button,
+#restart {
+	font-size: 1.5em;
+	padding: 0.5em 1.8em;
+	border-radius: 0.3em;
+	text-transform: uppercase;
+	font-weight: 600;
+	background: #272829;
+	color: #D5FFE4;
+}
+#restart {
+	margin-top: 0.9em;
+}
+#wrapper {
+	position: absolute;
+	transform: translateX(-50%);
+	top: 20%;
+	left: 50%;
+	width: 90%;
+	max-width: 37.5em;
+}
+#display-container {
+	position: relative;
+	background-color: #ffffff;
+	padding: 3.1em 1.8em;
+	width: 100%;
+	margin: 0 auto;
+	border-radius: 0.6em;
+	box-shadow: 0 20px 45px rgba(0, 24, 56, 0.15);
+}
+.header {
+	margin-bottom: 1.8em;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: 0.6em;
+	border-bottom: 0.1em solid #c0bfd2;
+}
+.timer-div {
+	background-color: #e1f5fe;
+	width: 6.5em;
+	border-radius: 1.8em;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0.5em 1.1em;
+}
+img {
+	width: 40%;
+	height: 40%;
+}
+.question {
+	margin-bottom: 1.25em;
+	font-weight: 500;
+}
+.option-div {
+	font-size: 0.9em;
+	width: 100%;
+	padding: 1em;
+	margin: 0.3em 0;
+	text-align: left;
+	outline: none;
+	background: transparent;
+	border: 2px solid #272829;
+	border-radius: 0.3em;
+}
+.option-div:disabled {
+	color: #272829;
+	cursor: not-allowed;
+}
+.btn-container {
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 1.5em;
+}
+#next-button {
+	font-size: 1em;
+	background-color: #272829;
+	color: #D5FFE4;
+	font-weight: 600;
+	padding: 0.7em 1.8em;
+	border-radius: 0.3em;
+	cursor: pointer; /* Add this to show pointer on hover */
+}
+
+#next-button:disabled {
+    background-color: darkgray; /* Change color to dark gray when disabled */
+}
+
+#next-button.enabled {
+    background-color: black; /* Change color to black when enabled */
+}
+.hide {
+	display: none;
+}
+.correct {
+	background-color: #e7f6d5;
+	color: #689f38;
+	border-color: #689f38;
+}
+.inCorrect {
+	background-color: #ffdde0;
+	color: #d32f2f;
+	border-color: #d32f2f;
+}
+#user-score {
+	font-size: 1.5em;
+	color: #272829;
+}
+@media screen and (max-width: 600px) {
+	body {
+		font-size: 12px;
+	}
+}
